@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dynamic Mobile Website</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+<!-- Page 1 -->
+<div data-role="page" id="home">
+    <div data-role="header">
+        <h1>Welcome to home </h1>
+    </div>
+    <div data-role="content">
+        <p>This is Page 1 content.</p>
+        <a href="#page2" data-role="button" data-transition="slide">Go to Page 2</a>
+        <a href="#about" data-role="button">About</a>
+
+    </div>
+    <div data-role="footer">
+        <h4>Footer for Page 1</h4>
+    </div>
+    <div data-role="navbar">
+        <ul>
+            <li><a href="#home" class="ui-btn-active">Home</a></li>
+            <li><a href="#about" class="ui-btn-active">About</a></li>
+            <li><a href="#page2" class="button color-red">page2</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Page 2 -->
+<div data-role="page" id="page2">
+    <div data-role="header">
+        <h1>Welcome to Page 2</h1>
+    </div>
+    <div data-role="content">
+        <p>This is Page 2 content.</p>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+            <input type="submit" value="Submit">
+        </form>
+        <a href="#home" data-role="button" data-transition="fade">HOME </a>
+    </div>
+    <div data-role="footer">
+        <h4>Footer for Page 2</h4>
+    </div>
+    <div data-role="navbar" id="settings">
+        <div data-role="content">
+            <a href="#home" data-role="button" data-transition="dropdown">
+                Go to home 
+            </a>
+            <a href="#about" data-role="button" data-transition="dropdown">
+                Go to about 
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Custom event handler
+    $(document).on("pagecreate", function () {
+        alert("Page created!");
+    });
+</script>
+</body>
+</html>
